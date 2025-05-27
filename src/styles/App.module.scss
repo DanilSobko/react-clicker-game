@@ -1,0 +1,18 @@
+.app {
+  padding: 1rem;
+}
+
+.mainLayout {
+  display: flex;
+  gap: 2rem; /* відстань між лівою і правою частиною */
+  align-items: flex-start; /* вирівняти по верхньому краю */
+}
+
+.leftPanel {
+  flex: 1; /* займатиме всю доступну ширину */
+  max-width: 600px; /* максимум, можна змінити */
+}
+
+.rightPanel {
+  width: 320px; /* ширина колеса з запасом */
+}

@@ -1,0 +1,79 @@
+.casesContainer {
+  padding: 1rem;
+  background: #f8f8f8;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.caseGrid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.caseBox {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 180px;
+  background: white;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.caseBox h3 {
+  margin: 0.5rem 0;
+}
+
+.caseBox button {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: #444;
+  color: white;
+  border-radius: 5px;
+}
+
+.caseBox button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.result {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  animation: fadein 0.5s ease-in;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+  animation: shake 1s;
+}
