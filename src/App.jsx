@@ -7,6 +7,7 @@ import Cases from './components/Cases';
 import DuiktShop from './components/DuiktShop';
 import AchievementBar from './components/AchievementBar';
 import ResetButton from './components/ResetButton';
+import MusicPlayer from './components/MusicPlayer'; // <-- Імпорт додано
 
 const PrestigeButton = () => {
   const { gameState, prestige } = useGame();
@@ -40,6 +41,9 @@ const GameUI = () => {
         ...skinStyle,
       }}
     >
+      {/* Додаємо музичний плеєр */}
+      <MusicPlayer />
+
       <h1>Clicker Game</h1>
       <p>Credits: {gameState.credits}</p>
       <p>Click Value: {gameState.clickValue}</p>
