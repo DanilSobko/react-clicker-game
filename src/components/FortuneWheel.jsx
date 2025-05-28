@@ -5,7 +5,7 @@ import styles from '../styles/FortuneWheel.module.scss';
 const bonuses = [
   { label: '×2 Clicks (30s)', type: 'clickMultiplier', value: 2, duration: 30, color: '#f44336' },
   { label: '+100 Credits', type: 'instantCredits', value: 100, color: '#e91e63' },
-  { label: '×3 Clicks (15s)', type: 'clickMultiplier', value: 3, duration: 15, color: '#9c27b0' },
+  { label: '×2 Clicks (15s)', type: 'clickMultiplier', value: 3, duration: 15, color: '#9c27b0' },
   { label: 'No Prize 😢', type: 'none', color: '#607d8b' },
 ];
 
@@ -18,6 +18,7 @@ const FortuneWheel = () => {
   const [bonusToApply, setBonusToApply] = useState(null);
   const [activeBonusLabel, setActiveBonusLabel] = useState('');
   const [originalClickValue, setOriginalClickValue] = useState(null);
+  const [lastSpinTime, setLastSpinTime] = useState(null);
   const wheelRef = useRef(null);
   const timeoutRef = useRef(null);
 
@@ -26,6 +27,14 @@ const FortuneWheel = () => {
   }, []);
 
   const spin = () => {
+    const now = Date.now();
+
+    if (lastSpinTime && now - lastSpinTime < 60000) {
+      const secondsLeft = Math.ceil((60000 - (now - lastSpinTime)) / 1000);
+      alert(`Зачекай ${secondsLeft} секунд, перш ніж крутити знову.`);
+      return;
+    }
+
     if (spinning || bonusToApply) return;
 
     setSpinning(true);
@@ -47,6 +56,7 @@ const FortuneWheel = () => {
       }
       setBonusToApply(bonuses[randomIndex]);
       setSpinning(false);
+      setLastSpinTime(Date.now());
     }, 4000);
   };
 
@@ -66,7 +76,6 @@ const FortuneWheel = () => {
     }
 
     if (bonusToApply.type === 'clickMultiplier') {
-      // Якщо бонус вже активний, скасовуємо старий таймаут і скидаємо значення
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
 
       if (originalClickValue === null) {
@@ -94,6 +103,9 @@ const FortuneWheel = () => {
 
   return (
     <div className={styles.wheelContainer}>
+      {/* Музика - вкажи свій шлях до файлу у public */}
+      <audio src="/path-to-your-music.mp3" autoPlay loop />
+
       <h2>Колесо фортуни 🎡</h2>
 
       <div className={styles.wheelWrapper} style={{ position: 'relative', width: 320, height: 320, margin: 'auto' }}>
