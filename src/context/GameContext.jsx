@@ -61,7 +61,7 @@ export const GameProvider = ({ children }) => {
     {
       id: 'bg1',
       name: 'Лісова магія',
-      cost: 100,
+      cost: 1000,
       style: {
         backgroundImage: 'url("https://images.unsplash.com/photo-1506744038136-46273834b3fb")',
         backgroundSize: 'cover',
@@ -71,7 +71,7 @@ export const GameProvider = ({ children }) => {
     {
       id: 'bg2',
       name: 'Космічна ніч',
-      cost: 20000,
+      cost: 9000,
       style: {
         backgroundImage: 'url("https://kpal.sm.ua/wp-content/uploads/2021/04/755783410765280.jpg")',
         backgroundSize: 'cover',
