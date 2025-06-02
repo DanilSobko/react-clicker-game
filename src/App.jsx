@@ -7,7 +7,8 @@ import Cases from './components/Cases';
 import DuiktShop from './components/DuiktShop';
 import AchievementBar from './components/AchievementBar';
 import ResetButton from './components/ResetButton';
-import MusicPlayer from './components/MusicPlayer'; // <-- Імпорт додано
+import MusicPlayer from './components/MusicPlayer';
+import './App.css';
 
 const PrestigeButton = () => {
   const { gameState, prestige } = useGame();
@@ -41,49 +42,51 @@ const GameUI = () => {
         ...skinStyle,
       }}
     >
-      {/* Додаємо музичний плеєр */}
-      <MusicPlayer />
+      <div className="yellowBox">
+        <MusicPlayer />
 
-      <h1>Clicker Game</h1>
-      <p>Credits: {gameState.credits}</p>
-      <p>Click Value: {gameState.clickValue}</p>
-      <p>Duiktcoins: {gameState.duiktcoins}</p>
+        <div className="main-wrapper">
+          <h1>Clicker Game</h1>
+          <p>Credits: {gameState.credits}</p>
+          <p>Click Value: {gameState.clickValue}</p>
+          <p>Duiktcoins: {gameState.duiktcoins}</p>
 
-      <button
-        onClick={incrementCredits}
-        disabled={!gameState.canClick}
-        style={{ padding: '10px 20px', fontSize: '1.1rem', cursor: 'pointer' }}
-      >
-        Click me!
-      </button>
+          <button
+            onClick={incrementCredits}
+            disabled={!gameState.canClick}
+            style={{ padding: '10px 20px', fontSize: '1.1rem', cursor: 'pointer' }}
+          >
+            Click me!
+          </button>
+        </div>
 
-      <hr />
+        <hr />
 
-      <h2>Upgrades</h2>
-      {Object.entries(gameState.upgrades).map(([key, { level, cost }]) => (
-        <button
-          key={key}
-          onClick={() => buyUpgrade(key)}
-          disabled={gameState.credits < cost}
-          style={{ padding: '8px', margin: '5px' }}
-        >
-          {key} (Level {level}) – Cost: {cost}
-        </button>
-      ))}
+        <h2>Upgrades</h2>
+        <div className="upgrades">
+          {Object.entries(gameState.upgrades).map(([key, { level, cost }]) => (
+            <button
+              key={key}
+              onClick={() => buyUpgrade(key)}
+              disabled={gameState.credits < cost}
+            >
+              {key} (Level {level}) – Cost: {cost}
+            </button>
+          ))}
+        </div>
 
-      <PrestigeButton />
-      <ResetButton />
+        <PrestigeButton />
+        <ResetButton />
 
-      <hr />
+        <div className="components-wrapper">
+          <SkinShop />
+          <FortuneWheel />
+          <Cases />
+          <DuiktShop />
+        </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: '2rem' }}>
-        <SkinShop />
-        <FortuneWheel />
-        <Cases />
-        <DuiktShop />
+        <AchievementBar />
       </div>
-
-      <AchievementBar />
     </div>
   );
 };
