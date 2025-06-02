@@ -1,42 +1,164 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* Загальні стилі */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f0f2f, #1a1a40);
+  color: #f0e85f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   padding: 2rem;
+}
+
+/* Заголовок */
+h1 {
+  font-size: 3.5rem;
+  color: #ffdd00;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 0 10px #000000, 0 0 20px #ffcc00;
+  letter-spacing: 3px;
+  font-weight: 900;
+  user-select: text;
+}
+
+/* Текстові параграфи */
+p {
+  font-size: 1.3rem;
+  margin: 0.75rem 0;
+  color: #fffccf;
+  text-shadow: 0 0 3px #000000cc;
+}
+
+/* Кнопки */
+button {
+  background: linear-gradient(135deg, #ffcc00, #ffaa00);
+  color: #1e1e2f;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 30px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px #ffcc0055;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+}
+
+button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ffaa00, #ffcc00);
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px #ffbb0044;
+  color: #1e1e2f;
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+  box-shadow: 0 3px 10px #ffbb0022;
+}
+
+button:disabled {
+  background: #b3b3b3;
+  color: #000000aa;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Секція апгрейдів */
+.upgrades {
+  background: #4430f3; 
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px; /* або інша ширина, щоб не було занадто широким */
+  margin: 2rem auto;
+  box-shadow: 0 0 15px #ffcc00aa;
+}
+
+
+.upgrades button {
+  min-width: 140px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  box-shadow: 0 3px 10px #ffcc0044;
+}
+
+/* Панель досягнень */
+.achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+.achievement {
+  background: #222238;
+  border-radius: 15px;
+  padding: 1.2rem 1.5rem;
+  flex: 1 1 180px;
+  color: #000; /* <-- чорний колір тексту */
+  font-weight: 700;
+  box-shadow: 0 0 10px #ffcc0040;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+.achievement:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ffd633aa;
+}
+
+/* Компоненти */
+.components-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+  justify-content: center;
+}
+
+/* Музичний плеєр */
+.music-player {
+  margin-top: 3rem;
+  background: #292940cc;
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #ffcc0055;
+  color: #fff8b0;
+  font-weight: 600;
+  user-select: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.yellowBox {
+  background: rgba(255, 255, 0, 0.1);
+  border: 3px solid #ffcc00;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+  margin: 2rem auto;
+  max-width: 1100px;
+}
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
   text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
