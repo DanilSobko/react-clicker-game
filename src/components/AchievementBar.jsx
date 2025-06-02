@@ -24,7 +24,7 @@ const AchievementBar = () => {
               width: 100,
               height: 100,
               border: '2px solid',
-              borderColor: achieved ? 'limegreen' : 'gray',
+              borderColor: achieved ? 'limegreenид' : 'gray',
               borderRadius: 8,
               display: 'flex',
               alignItems: 'center',
@@ -33,6 +33,7 @@ const AchievementBar = () => {
               textAlign: 'center',
               backgroundColor: achieved ? '#ddffdd' : '#f0f0f0',
               userSelect: 'none',
+              color: '#000',
             }}
           >
             {label}
