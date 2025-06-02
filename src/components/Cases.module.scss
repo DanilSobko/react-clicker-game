@@ -1,79 +1,82 @@
 .casesContainer {
-  padding: 1rem;
-  background: #f8f8f8;
-  border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
 }
 
 .caseGrid {
   display: flex;
-  gap: 1.5rem;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .caseBox {
-  border: 2px solid;
+  width: 200px;
+  border: 3px solid;
   border-radius: 10px;
+  background-color: #f2f2f2;
   padding: 1rem;
-  width: 180px;
-  background: white;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: #111;
 
-.caseBox h3 {
-  margin: 0.5rem 0;
-}
-
-.caseBox button {
-  margin-top: 0.5rem;
-  padding: 0.4rem 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  border: none;
-  background: #444;
-  color: white;
-  border-radius: 5px;
-}
-
-.caseBox button:disabled {
-  background: gray;
-  cursor: not-allowed;
-}
-
-.result {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-  text-align: center;
-  animation: fadein 0.5s ease-in;
-}
-
-@keyframes fadein {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #111;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  p {
+    margin: 0.5rem 0;
+    font-weight: 500;
+  }
+
+  button {
+    margin-top: 0.5rem;
+    padding: 0.4rem 1rem;
+    background-color: #ffc107;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+  }
+
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
 }
 
 .shake {
-  animation: shake 1s;
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.result {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ffeb3b;
+}
+
+.caseTitle {
+  color: #111;
+}
+
+.achievementsTitle {
+  color: #fff;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px #000;
 }
