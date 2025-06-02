@@ -8,7 +8,7 @@ const MusicPlayer = () => {
   ];
 
   const audioRef = useRef(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
 
@@ -17,7 +17,9 @@ const MusicPlayer = () => {
     if (playing) {
       audioRef.current.pause();
     } else {
-      audioRef.current.play();
+      audioRef.current.play().catch((err) => {
+        console.log('Autoplay failed:', err);
+      });
     }
     setPlaying(!playing);
   };
@@ -33,14 +35,17 @@ const MusicPlayer = () => {
   const nextTrack = () => {
     const nextIndex = (currentTrackIndex + 1) % tracks.length;
     setCurrentTrackIndex(nextIndex);
-    setPlaying(true); // автоматично відтворювати наступний трек
+    setPlaying(true);
   };
 
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.load();
+      audioRef.current.volume = volume;
       if (playing) {
-        audioRef.current.play();
+        audioRef.current.play().catch((err) => {
+          console.log('Autoplay failed:', err);
+        });
       }
     }
   }, [currentTrackIndex]);
