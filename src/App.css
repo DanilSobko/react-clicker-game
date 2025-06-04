@@ -179,3 +179,12 @@ button:disabled {
 .duikt-section p {
   font-size: 1.2rem;
 }
+.duikt-upgrades-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem 0;
+  width: 100%;
+}
