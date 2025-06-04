@@ -14,26 +14,16 @@ const AchievementBar = () => {
   ];
 
   return (
-    <div style={{ display: 'flex', gap: 10, marginTop: 20 }}>
+    <div className="achievements-container">
       {achievementsList.map(({ key, label }) => {
-        const achieved = achievements[key]?.achieved;  // безпечний доступ
+        const achieved = achievements[key]?.achieved;
         return (
           <div
             key={key}
+            className="achievement"
             style={{
-              width: 100,
-              height: 100,
-              border: '2px solid',
-              borderColor: achieved ? 'limegreenид' : 'gray',
-              borderRadius: 8,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 12,
-              textAlign: 'center',
+              borderColor: achieved ? 'limegreen' : 'gray',
               backgroundColor: achieved ? '#ddffdd' : '#f0f0f0',
-              userSelect: 'none',
-              color: '#000',
             }}
           >
             {label}
