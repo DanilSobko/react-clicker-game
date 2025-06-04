@@ -165,11 +165,11 @@ button:disabled {
 .duikt-section {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Горизонтальне центрування */
-  justify-content: center; /* Вертикальне (якщо потрібно) */
-  margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 .duikt-section h2 {
   font-size: 2rem;
