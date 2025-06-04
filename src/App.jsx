@@ -75,6 +75,11 @@ const GameUI = () => {
           ))}
         </div>
 
+        <div className="duikt-section">
+          <h2>Duikt Upgrades</h2>
+          <p>Duiktcoins: {gameState.duiktcoins}</p>
+        </div>
+
         <PrestigeButton />
         <ResetButton />
 
