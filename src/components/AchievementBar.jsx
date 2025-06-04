@@ -20,7 +20,7 @@ const AchievementBar = () => {
         return (
           <div
             key={key}
-            className="achievement"
+            className="simple-achievement"
             style={{
               borderColor: achieved ? 'limegreen' : 'gray',
               backgroundColor: achieved ? '#ddffdd' : '#f0f0f0',
