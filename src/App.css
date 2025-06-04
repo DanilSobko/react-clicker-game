@@ -162,3 +162,15 @@ button:disabled {
   min-height: 50vh;
   text-align: center;
 }
+.duikt-section {
+  text-aling: center;
+  margin-top: 2rem;
+}
+.duikt-section h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-botton: 0.5rem;
+}
+.duikt-section p {
+  font-size: 1.2rem;
+}
