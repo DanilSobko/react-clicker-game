@@ -1,4 +1,4 @@
-/* Загальні стилі */
+/* === Загальні стилі === */
 html, body {
   height: 100%;
   margin: 0;
@@ -20,7 +20,7 @@ body {
   padding: 2rem;
 }
 
-/* Заголовок */
+/* === Заголовки === */
 h1 {
   font-size: 3.5rem;
   color: #ffdd00;
@@ -29,17 +29,26 @@ h1 {
   letter-spacing: 3px;
   font-weight: 900;
   user-select: text;
+  text-align: center;
 }
 
-/* Текстові параграфи */
+h2 {
+  font-size: 2rem;
+  color: #ffcc00;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* === Текстові параграфи === */
 p {
   font-size: 1.3rem;
   margin: 0.75rem 0;
   color: #fffccf;
   text-shadow: 0 0 3px #000000cc;
+  text-align: center;
 }
 
-/* Кнопки */
+/* === Кнопки === */
 button {
   background: linear-gradient(135deg, #ffcc00, #ffaa00);
   color: #1e1e2f;
@@ -58,7 +67,6 @@ button:hover:not(:disabled) {
   background: linear-gradient(135deg, #ffaa00, #ffcc00);
   transform: scale(1.08);
   box-shadow: 0 8px 20px #ffbb0044;
-  color: #1e1e2f;
 }
 
 button:active:not(:disabled) {
@@ -73,20 +81,42 @@ button:disabled {
   box-shadow: none;
 }
 
-/* Секція апгрейдів */
+/* === Блок гри (жовта рамка) === */
+.yellowBox {
+  background: rgba(255, 255, 0, 0.1);
+  border: 3px solid #ffcc00;
+  border-radius: 18px;
+  padding: 2rem;
+  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
+  margin: 2rem auto;
+  max-width: 1100px;
+  text-align: center;
+}
+
+/* === Основна обгортка === */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 50vh;
+}
+
+/* === Апгрейди === */
 .upgrades {
-  background: #4430f3; 
+  background: #4430f3;
   border-radius: 16px;
   padding: 1.5rem 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  max-width: 900px; /* або інша ширина, щоб не було занадто широким */
+  max-width: 900px;
   margin: 2rem auto;
   box-shadow: 0 0 15px #ffcc00aa;
+  text-align: center;
 }
-
 
 .upgrades button {
   min-width: 140px;
@@ -96,13 +126,35 @@ button:disabled {
   box-shadow: 0 3px 10px #ffcc0044;
 }
 
-/* Панель досягнень */
+/* === Duikt Upgrades === */
+.duikt-section {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.duikt-upgrades-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+/* === Панель досягнень === */
 .achievements {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
   margin-top: 3rem;
   justify-content: center;
+  text-align: center;
 }
 
 .achievement {
@@ -110,12 +162,13 @@ button:disabled {
   border-radius: 15px;
   padding: 1.2rem 1.5rem;
   flex: 1 1 180px;
-  color: #000; /* <-- чорний колір тексту */
+  color: #000;
   font-weight: 700;
   box-shadow: 0 0 10px #ffcc0040;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
   user-select: none;
+  text-align: center;
 }
 
 .achievement:hover {
@@ -123,16 +176,17 @@ button:disabled {
   box-shadow: 0 0 20px #ffd633aa;
 }
 
-/* Компоненти */
+/* === Компоненти === */
 .components-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 3rem;
   justify-content: center;
+  text-align: center;
 }
 
-/* Музичний плеєр */
+/* === Музичний плеєр === */
 .music-player {
   margin-top: 3rem;
   background: #292940cc;
@@ -144,47 +198,5 @@ button:disabled {
   user-select: none;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-}
-.yellowBox {
-  background: rgba(255, 255, 0, 0.1);
-  border: 3px solid #ffcc00;
-  border-radius: 18px;
-  padding: 2rem;
-  box-shadow: 0 0 25px rgba(255, 204, 0, 0.6);
-  margin: 2rem auto;
-  max-width: 1100px;
-}
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 50vh;
   text-align: center;
-}
-.duikt-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-.duikt-section h2 {
-  font-size: 2rem;
-  color: #ffcc00;
-  margin-bottom: 0.5rem;
-}
-.duikt-section p {
-  font-size: 1.2rem;
-}
-.duikt-upgrades-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 2rem 0;
-  width: 100%;
 }
