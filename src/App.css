@@ -199,4 +199,21 @@ button:disabled {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Кнопки плеєра */
+.music-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem; /* Відступ від кнопок до гучності */
+}
+
+/* Шкала гучності */
+.volume-slider {
+  width: 200px;
+  margin-top: 0.5rem;
 }
