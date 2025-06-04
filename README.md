@@ -60,4 +60,4 @@
 2. Відкрий термінал:
 ```bash
 git clone https://github.com/DanilSobko/react-clicker-game.git
-cd react-clicker-game1
+cd react-clicker-game
