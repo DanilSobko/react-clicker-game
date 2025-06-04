@@ -163,8 +163,13 @@ button:disabled {
   text-align: center;
 }
 .duikt-section {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Горизонтальне центрування */
+  justify-content: center; /* Вертикальне (якщо потрібно) */
   margin-top: 2rem;
+  text-align: center;
+  width: 100%;
 }
 .duikt-section h2 {
   font-size: 2rem;
