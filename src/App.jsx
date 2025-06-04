@@ -27,7 +27,7 @@ const PrestigeButton = () => {
 const GameUI = () => {
   const { gameState, incrementCredits, buyUpgrade, skins } = useGame();
 
-  const activeSkinObj = skins.find(skin => skin.id === gameState.activeSkin);
+  const activeSkinObj = skins.find((skin) => skin.id === gameState.activeSkin);
   const skinStyle = activeSkinObj ? activeSkinObj.style : {};
 
   return (
@@ -75,7 +75,19 @@ const GameUI = () => {
           ))}
         </div>
 
-        <div className="duikt-section">
+        {/* Центрований блок з Duikt Upgrades */}
+        <div
+          className="duikt-section"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            marginTop: '2rem',
+            marginBottom: '1rem',
+          }}
+        >
           <h2>Duikt Upgrades</h2>
           <p>Duiktcoins: {gameState.duiktcoins}</p>
         </div>
