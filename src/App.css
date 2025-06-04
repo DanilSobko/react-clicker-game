@@ -176,19 +176,18 @@ button:disabled {
   box-shadow: 0 0 20px #ffd633aa;
 }
 
-/* === Альтернативний стиль досягнень (AchievementBar) === */
 .achievements-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row; /* розташування в ряд */
+  justify-content: center; /* центрування по горизонталі */
+  align-items: center; /* центрування по вертикалі */
   gap: 1rem;
   margin: 2rem auto;
-  max-width: 300px;
+  flex-wrap: wrap; /* дозволяє перенос на новий ряд, якщо не вміщується */
 }
 
 .simple-achievement {
-  width: 100%;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   text-align: center;
   font-size: 14px;
   border: 2px solid gray;
@@ -198,7 +197,6 @@ button:disabled {
   background-color: #f0f0f0;
   color: #000;
 }
-
 /* === Компоненти === */
 .components-wrapper {
   display: flex;
