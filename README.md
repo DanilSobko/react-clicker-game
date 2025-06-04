@@ -59,5 +59,5 @@
 1. Встанови Git: [https://git-scm.com/downloads](https://git-scm.com/downloads)
 2. Відкрий термінал:
 ```bash
-git clone https://github.com/DanilSobko/react-clicker-game1.git
+git clone https://github.com/DanilSobko/react-clicker-game.git
 cd react-clicker-game1
