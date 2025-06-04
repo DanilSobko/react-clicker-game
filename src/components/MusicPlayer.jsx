@@ -25,7 +25,7 @@ const MusicPlayer = () => {
   };
 
   const changeVolume = (e) => {
-    const newVolume = Number(e.target.value);
+    const newVolume = Number(e.target.value) / 100; // З діапазону 0–100 у 0–1
     setVolume(newVolume);
     if (audioRef.current) {
       audioRef.current.volume = newVolume;
@@ -57,7 +57,7 @@ const MusicPlayer = () => {
   }, [volume]);
 
   return (
-    <div style={{ margin: '1rem 0' }}>
+    <div className="music-player">
       <audio ref={audioRef} loop>
         <source src={tracks[currentTrackIndex].src} type="audio/mpeg" />
         Ваш браузер не підтримує аудіо.
@@ -67,26 +67,23 @@ const MusicPlayer = () => {
         🎵 Зараз грає: <strong>{tracks[currentTrackIndex].title}</strong>
       </div>
 
-      <button onClick={togglePlay} style={{ marginRight: '1rem' }}>
-        {playing ? '⏸️ Пауза' : '▶️ Відтворити'}
-      </button>
+      <div className="music-controls">
+        <button onClick={togglePlay}>
+          {playing ? '⏸️ Пауза' : '▶️ Відтворити'}
+        </button>
+        <button onClick={nextTrack}>
+          ⏭️ Наступний трек
+        </button>
+      </div>
 
-      <button onClick={nextTrack} style={{ marginRight: '1rem' }}>
-        ⏭️ Наступний трек
-      </button>
-
-      <label>
-        Гучність:
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.01"
-          value={volume}
-          onChange={changeVolume}
-          style={{ marginLeft: '0.5rem' }}
-        />
-      </label>
+      <input
+        type="range"
+        className="volume-slider"
+        min="0"
+        max="100"
+        value={volume * 100}
+        onChange={changeVolume}
+      />
     </div>
   );
 };
